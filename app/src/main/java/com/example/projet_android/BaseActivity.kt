@@ -1,5 +1,7 @@
 package com.example.projet_android
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -55,6 +57,13 @@ open class BaseActivity : AppCompatActivity(){
         imageViewBack.setOnClickListener(View.OnClickListener {
             finish()
         })
+    }
+
+    fun openInBrowser(view: View) {
+        val url = "https://www.epsi.fr/" // Remplacez l'URL par l'URL que vous souhaitez ouvrir
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(url)
+        startActivity(intent)
     }
 
 }

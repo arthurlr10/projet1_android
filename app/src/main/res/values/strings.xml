@@ -5,4 +5,9 @@
     <string name="btn_text_info">Info</string>
     <string name="btn_text_produits">Produits</string>
 
+    <string name="title_student">LORY</string>
+    <string name="btn_text_nomPrenom">LORY Arthur</string>
+    <string name="btn_text_title">Informations de l\'étudiant</string>
+    <string name="btn_text_mail">arthur.lory@orange.fr</string>
+
 </resources>
