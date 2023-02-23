@@ -1,5 +1,6 @@
 package fr.epsi.full_stack
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projet_android.R
+import com.example.projet_android.listProducts.ListProductActivity
+import com.example.projet_android.product.ProductActivity
 import com.squareup.picasso.Picasso
 
 class ListProductAdapter(val listProducts: ArrayList<ListProduct>):RecyclerView.Adapter<ListProductAdapter.ViewHolder>() {
@@ -34,6 +37,13 @@ class ListProductAdapter(val listProducts: ArrayList<ListProduct>):RecyclerView.
         holder.layoutContent.setOnClickListener(View.OnClickListener {
             Toast.makeText(holder.layoutContent.context,listProduct.name,Toast.LENGTH_SHORT).show()
         })
+        val intent = Intent(holder.layoutContent.context, ProductActivity::class.java)
+        intent.putExtra("name", listProduct.name)
+        intent.putExtra("imgUrl", listProduct.imgUrl)
+        intent.putExtra("description", listProduct.description)
+        //holder.layoutContent.context.startActivity(intent)
+        holder.layoutContent.setOnClickListener(View.OnClickListener {
+            holder.layoutContent.context.startActivity(intent)        })
     }
 
     override fun getItemCount(): Int {
