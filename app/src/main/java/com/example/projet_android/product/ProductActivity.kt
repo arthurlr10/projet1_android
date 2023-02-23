@@ -16,7 +16,8 @@ class ProductActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product)
         showBack()
-        setHeaderTitle(intent.getStringExtra("name"))
+        var titleHeader = intent.getStringExtra("name")
+        setHeaderTitle((titleHeader?.substring(0, 18) ?: "Produit") + "...")
 
         val textViewDescription = findViewById<TextView>(R.id.textViewDescription)
         val imageViewProduct = findViewById<ImageView>(R.id.imageViewProduct)
