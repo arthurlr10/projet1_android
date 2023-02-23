@@ -23,13 +23,13 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ProduitActivity"
+            android:name=".listProducts.ListProductActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity><activity
-            android:name=".RayonActivity"
+            android:name=".rayon.RayonActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

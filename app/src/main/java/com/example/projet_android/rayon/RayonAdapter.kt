@@ -1,5 +1,6 @@
-package com.example.projet_android
+package com.example.projet_android.rayon
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +8,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projet_android.R
+import com.example.projet_android.listProducts.ListProductActivity
 
 class RayonAdapter (val rayons: ArrayList<Rayon>):RecyclerView.Adapter<RayonAdapter.ViewHolder>() {
 
@@ -22,14 +25,21 @@ class RayonAdapter (val rayons: ArrayList<Rayon>):RecyclerView.Adapter<RayonAdap
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val student = rayons.get(position)
-        holder.textViewTitle.text=student.title
-        holder.layoutContent.setOnClickListener(View.OnClickListener {
-            Toast.makeText(holder.layoutContent.context,student.title,Toast.LENGTH_SHORT).show()
-        })
+        val rayon = rayons.get(position)
+        holder.textViewTitle.text=rayon.title
+        holder.layoutContent.setOnClickListener {
+            val intent = Intent(holder.layoutContent.context, ListProductActivity::class.java)
+            intent.putExtra("url", rayon.url)
+            intent.putExtra("title", rayon.title)
+            holder.layoutContent.context.startActivity(intent)
+        }
     }
+
+
 
     override fun getItemCount(): Int {
         return rayons.size
     }
+
+
 }
