@@ -10,4 +10,6 @@
     <string name="btn_text_title">Informations de l\'étudiant</string>
     <string name="btn_text_mail">arthur.lory@orange.fr</string>
 
+    <string name="title_rayons">Rayons</string>
+
 </resources>

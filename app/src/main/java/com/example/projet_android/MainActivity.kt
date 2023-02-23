@@ -1,7 +1,6 @@
 package com.example.projet_android
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -20,7 +19,7 @@ class MainActivity : BaseActivity() {
         })
         val buttonSignup=findViewById<Button>(R.id.buttonProduits)
         buttonSignup.setOnClickListener(View.OnClickListener {
-            val newIntent = Intent(application, ProduitActivity::class.java)
+            val newIntent = Intent(application, RayonActivity::class.java)
             startActivity(newIntent)
         })
     }

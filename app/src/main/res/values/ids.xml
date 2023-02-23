@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="textViewName" type="id" />
+    <item name="textViewEmail" type="id" />
+    <item name="textViewCity" type="id" />
+    <item name="textViewZipcode" type="id" />
+    <item name="textViewPhone" type="id" />
+    <item name="imageViewStudent" type="id" />
+    <item name="layoutContent" type="id" />
+</resources>
