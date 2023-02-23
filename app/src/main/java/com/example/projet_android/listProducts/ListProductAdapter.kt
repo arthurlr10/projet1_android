@@ -32,7 +32,7 @@ class ListProductAdapter(val listProducts: ArrayList<ListProduct>):RecyclerView.
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val listProduct = listProducts.get(position)
         holder.textViewName.text=listProduct.name
-        holder.textViewDescription.text=listProduct.description
+        holder.textViewDescription.text=listProduct.description.substring(0, 200) + "..."
         Picasso.get().load(listProduct.imgUrl).into(holder.imageViewProduct)
         holder.layoutContent.setOnClickListener(View.OnClickListener {
             Toast.makeText(holder.layoutContent.context,listProduct.name,Toast.LENGTH_SHORT).show()
